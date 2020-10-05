@@ -1,7 +1,7 @@
 class Contador_de_notas:
     def __init__(self, valor):
         self.__valor = valor
-        if self.__valor % 5 != 0:
+        if self.__valor % 5 != 0 or self.__valor <= 0:
             raise ValueError('Valor não permitido!'
                              'Favor escolher um valor '
                              'divisível por 5.')
@@ -135,19 +135,26 @@ class Contador_de_notas:
 
     def mostrar_possibilidades(self):
         if self.__valor >= 100:
-            return f"{self.possibiliadade_1()}.\n{self.possibilidade_2()}.\n" \
-                   f"{self.possibilidade_3()}.\n{self.possibilidade_4()}.\n" \
-                   f"{self.possibilidade_5()}"
-        elif self.__valor < 100 and self.__valor >= 50 :
-            return f"{self.possibilidade_2()}.\n" \
-                   f"{self.possibilidade_3()}.\n{self.possibilidade_4()}.\n" \
-                   f"{self.possibilidade_5()}"
-        elif self.__valor < 50 and self.__valor >= 20:
-            return f"{self.possibilidade_3()}.\n{self.possibilidade_4()}.\n" \
-                   f"{self.possibilidade_5()}"
-        elif self.__valor < 20 and self.__valor >= 10:
-            return f"{self.possibilidade_4()}.\n" \
-                   f"{self.possibilidade_5()}"
+            return f"Primeira possibilidade:\n {self.possibiliadade_1()}."\
+                   f"\nSegunda possibilidade:\n {self.possibilidade_2()}."\
+                   f"\nTerceira possibilidade:\n {self.possibilidade_3()}."\
+                   f"\nQuarta possibilidade:\n{self.possibilidade_4()}."\
+                   f"\nQuinta possibilidade:\n{self.possibilidade_5()}"
+
+        elif 50 <= self.__valor < 100:
+            return f"Primeira possibilidade:\n{self.possibilidade_2()}." \
+                   f"\nSegunda possibilidade:\n{self.possibilidade_3()}." \
+                   f"\nTerceira possibilidade:\n{self.possibilidade_4()}." \
+                   f"\nQuarta possibilidade: \n{self.possibilidade_5()}"
+
+        elif 20 <= self.__valor < 50:
+            return f"Primeira possibilidade:\n{self.possibilidade_3()}." \
+                   f"\nSegunda possibilidade:\n{self.possibilidade_4()}." \
+                   f"\nQuarta possibilidade:\n{self.possibilidade_5()}"
+
+        elif 10 <= self.__valor < 20:
+            return f"Primeira possibilidade:\n{self.possibilidade_4()}." \
+                   f"\nSegunda possibilidade:\n{self.possibilidade_5()}"
         else:
             return f"{self.possibilidade_5()}"
 

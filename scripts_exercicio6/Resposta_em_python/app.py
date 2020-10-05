@@ -1,4 +1,4 @@
-from scripts.contador_de_notas import Contador_de_notas
+from scripts_exercicio6.Resposta_em_python.contador_de_notas import Contador_de_notas
 
 flag1= True
 while flag1 == True:
