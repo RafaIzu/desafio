@@ -215,7 +215,7 @@ function calculaNotas(e){
         resultado +=
         `
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Valor inválido!</strong> 
+        <strong>Valor inválido! Favor digitar um valor maior que zero e múltiplo de 5.</strong> 
         </div>
         `
     }
